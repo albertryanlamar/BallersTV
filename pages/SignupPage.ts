@@ -31,6 +31,11 @@ async clickSignup(){
 async clickTerms(){
  await this.cmnAct.click(this.termsLnk);
 }
+
+async closeTab(closePage:any){
+    await closePage.close();
+}
+
 async clickPrivacy(){
     await this.cmnAct.click(this.privacyLnk);
 }

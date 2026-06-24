@@ -1,16 +1,14 @@
 import { Page } from "@playwright/test";
 
 export class BasePage{
- page:Page;
 
-    constructor(page:Page){
-this.page = page;
+    constructor(public page:Page){
 
     }
 
     //
-    async navigateToWebsite(){
-        await this.page.goto(process.env.URL);
+    async navigateToWebsite(url:any){
+        await this.page.goto(url);
         await this.page.waitForLoadState('load');
     }
 }
