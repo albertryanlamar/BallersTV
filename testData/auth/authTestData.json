@@ -1,0 +1,15 @@
+{
+ "validLogin":{
+    "username":"",
+    "password":""
+ },
+ "invalidLogin":{
+    "invalidUsername":"",
+    "invalidPassword":""
+ },
+ "emptyCredentials":{
+    "emptyUsername":"",
+    "emptyPassword":""
+ }
+
+}
