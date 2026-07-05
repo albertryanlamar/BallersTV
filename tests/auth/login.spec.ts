@@ -1,18 +1,20 @@
 
 import process from "node:process";
 import {test, expect} from "../../fixtures/testDataFixtures"
+import {openWebsite,goToLogin,loginWithCredentials} from "../../helpers/CommonStepsFlow"
 
 test(`Login with valid email and password`,({basePage,homePage,loginPage,loginData})=>{
-   test.step(`Navigate to Ballers TV`,async()=>{
-      await basePage.navigateToWebsite(process.env.BASE_URL);
-      await homePage.page.waitForLoadState();
-      await expect(homePage.page).toHaveTitle('');
-   })
+
+   openWebsite(basePage,process.env.BASE_URL);
    test.step(`Click Login`,async()=>{
       await homePage.menuBrger();
       await homePage.loginBtn();
       await loginPage.page.waitForLoadState();
-      await loginPage.login(loginData.validLogin.);
+      await loginPage.login(loginData.validLogin.username,loginData.validLogin.password);
    })
-
 })
+
+test(`Login with invalid Password`,()=>{
+
+
+});

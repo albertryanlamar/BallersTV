@@ -12,8 +12,8 @@ export function fileChecker(file:any){
    }
 }
 
-export async function testdataLoader(fileFoldeName:string,fileName:string){
+export  function testdataLoader(fileFoldeName:string,fileName:string){
     const filePath = path.join(testdataBasePath,fileFoldeName,fileName);
     fileChecker(filePath);
-    return readFile = await JSON.parse(fs.readFileSync(filePath,'utf-8'));
+    return readFile =  JSON.parse(fs.readFileSync(filePath,'utf-8'));
 }
