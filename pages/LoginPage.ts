@@ -12,7 +12,7 @@ passwordTxtBox: Locator;
 signUpLink:Locator;
 partnersLoginLink: Locator;
 loginBtn:Locator;
-
+errorMessage:Locator;
 
 constructor(page:Page){
     this.page = page;
@@ -28,13 +28,12 @@ constructor(page:Page){
 //actions
 
 async clickLogin(){
-    this.cmnAct.click(this.loginBtn);
+    await this.cmnAct.click(this.loginBtn);
 }
 
 async login(userName:string,password:string){
    await Promise.all([
        this.authForm.fillCredentials(userName,password),
-       this.clickLogin()
     ]);
 }
 
