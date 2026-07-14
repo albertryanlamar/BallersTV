@@ -1,6 +1,6 @@
-import {test as base} from "@playwright/test"
-import {LoginPage} from "../pages/LoginPage"
-import {HomePage} from "../pages/HomePage"
+import {test as baseFixture} from "./page.Fixt";
+import {LoginPage} from "../pages/LoginPage";
+import {HomePage} from "../pages/HomePage";
 import { BasePage } from "../pages/BasePage";
 import { SignupPage } from "../pages/SignupPage";
 
@@ -14,23 +14,24 @@ signupPage:SignupPage;
 }
 
 
-export const test = base.extend<PageFixtures>({
-
-  basePage:async({page},use)=>{
+export const test = baseFixture.extend<PageFixtures>({
+  basePage: async ({ page }, use) => {
     const basePage = new BasePage(page);
-    await use (basePage);
+    await use(basePage);
   },
 
-  loginPage: async({page},use)=>{
+  loginPage: async ({ page }, use) => {
     const loginPage = new LoginPage(page);
-    await use (loginPage);
+    await use(loginPage);
   },
-  homePage: async ({page},use)=>{
+
+  homePage: async ({ page }, use) => {
     const homePage = new HomePage(page);
     await use(homePage);
   },
-  signupPage:async({page},use)=>{
 
+  signupPage: async ({ page }, use) => {
+    const signupPage = new SignupPage(page);
+    await use(signupPage);
   }
-
 });
