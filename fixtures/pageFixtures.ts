@@ -1,4 +1,4 @@
-import {test as baseFixture} from "./page.Fixt";
+import {test as baseFixture} from "@playwright/test";
 import {LoginPage} from "../pages/LoginPage";
 import {HomePage} from "../pages/HomePage";
 import { BasePage } from "../pages/BasePage";
@@ -14,7 +14,7 @@ signupPage:SignupPage;
 }
 
 
-export const test = baseFixture.extend<PageFixtures>({
+export const testPageObj = baseFixture.extend<PageFixtures>({
   basePage: async ({ page }, use) => {
     const basePage = new BasePage(page);
     await use(basePage);
