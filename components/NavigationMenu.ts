@@ -4,9 +4,6 @@ import { CommonActions } from "../helpers/CommonActions";
 
 export class NavigationMenu{
   cmnAct:CommonActions = new CommonActions();
-  menuBrger:Locator;
-  libraryMnu:Locator;
-  loginBtn:Locator;
 
    constructor(public page:Page){}
   //Locators
