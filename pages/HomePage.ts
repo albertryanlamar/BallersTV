@@ -3,12 +3,13 @@ import { NavigationMenu } from "../components/NavigationMenu";
 
 export class HomePage{
 
-navigationMnu:NavigationMenu;
-
 constructor (public page: Page){
-this.navigationMnu= new NavigationMenu(this.page);
 }
-  
+
+get navigationMnu(): NavigationMenu {
+   return new NavigationMenu(this.page);
+}
+
 
 //
 
