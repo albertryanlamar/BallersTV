@@ -21,10 +21,10 @@ export class NavigationMenu{
    //methods
 
    async clickMenuBrgr(){
-    await this.cmnAct.click(this.NavigationMenuLocators.menuBrger);
+    await this.cmnAct.click(this.NavigationMenuLocators.menuBrger());
 
    }
     async clickLoginBtn(){
-      await this.cmnAct.click(this.NavigationMenuLocators.loginBtn);
+      await this.cmnAct.click(this.NavigationMenuLocators.loginBtn());
     }
 }
