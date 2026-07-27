@@ -7,7 +7,6 @@ export class NavigationMenu{
   menuBrger:Locator;
   libraryMnu:Locator;
   loginBtn:Locator;
-  name1:string;
 
    constructor(public page:Page){
     this.menuBrger = this.page.getByRole("button",{});
@@ -22,7 +21,6 @@ export class NavigationMenu{
    async clickMenuBrgr(){
     await this.cmnAct.click(this.menuBrger);
 
-   this.name1='cggg';
    }
     async clickLoginBtn(){
       await this.cmnAct.click(this.loginBtn);
