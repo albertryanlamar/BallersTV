@@ -8,21 +8,23 @@ export class NavigationMenu{
   libraryMnu:Locator;
   loginBtn:Locator;
 
-   constructor(public page:Page){
-    this.menuBrger = this.page.getByRole("button",{});
-    this.libraryMnu=this.page.getByRole("link",{});
-    this.loginBtn = this.page.getByRole("button",{name:'Login'})
+   constructor(public page:Page){}
+  //Locators
+  get NavigationMenuLocators(){
+    return{
+          menuBrger: () => this.page.getByRole("button",{}),
+          libraryMnu: () => this.page.getByRole("link",{}),
+          loginBtn: () => this.page.getByRole("button",{name:'Login'})
+    }
   }
-  //
-
 
    //methods
 
    async clickMenuBrgr(){
-    await this.cmnAct.click(this.menuBrger);
+    await this.cmnAct.click(this.NavigationMenuLocators.menuBrger);
 
    }
     async clickLoginBtn(){
-      await this.cmnAct.click(this.loginBtn);
+      await this.cmnAct.click(this.NavigationMenuLocators.loginBtn);
     }
 }
