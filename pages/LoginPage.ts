@@ -42,6 +42,11 @@ async expectLoginTitle(){
     await expect(this.page).toHaveTitle('/Login/');
 }
 
+async expectCredentialsFilled(emailVal,passVal){
+    await expect(this.authForm.emailTxtBox).toHaveValue(emailVal);
+    await expect(this.authForm.passwordTxtBox).toHaveValue(passVal);
+}
+
 
     
 }

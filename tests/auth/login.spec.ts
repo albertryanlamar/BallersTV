@@ -35,8 +35,7 @@ test(`Login with invalid Password`,async({basePage,homePage,loginPage,loginData}
 
   // 3rd step
   await fillLoginWithCredentialsStep(loginPage,loginData.validLogin.username,loginData.invalidLogin.password);
-  await expect(loginPage.unameTxtBox).toHaveValue(loginData.validLogin.username);
-  await expect(loginPage.passwordTxtBox).toHaveValue(loginData.invalidLogin.password);
+  await loginPage.expectCredentialsFilled(loginData.validLogin.username,loginData.invalidLogin.password);
 
   //4th step
   await clickLoginStep(loginPage);
