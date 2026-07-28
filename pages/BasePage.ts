@@ -1,4 +1,4 @@
-import { Page } from "@playwright/test";
+import { Page,expect } from "@playwright/test";
 
 export class BasePage{
 
@@ -9,5 +9,10 @@ export class BasePage{
     //
     async navigateToWebsite(url:any){
         await this.page.goto(url);
+    }
+
+    //assertions
+    async expectBaseTitle(){
+        await expect(this.page).toHaveTitle('/Ballers Tv/');
     }
 }

@@ -19,7 +19,6 @@ export class NavigationMenu{
 
    async clickMenuBrgr(){
     await this.cmnAct.click(this.NavigationMenuLocators.menuBrger);
-    this.NavigationMenuLocators.menuBrger().x
 
    }
     async clickLoginBtn(){

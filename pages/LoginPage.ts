@@ -1,4 +1,4 @@
-import { Locator, Page } from "@playwright/test";
+import { Locator, Page,expect } from "@playwright/test";
 import { CommonActions } from "../helpers/CommonActions";
 import { AuthForm } from "../components/AuthForm";
 
@@ -37,6 +37,10 @@ async login(userName:string,password:string){
     ]);
 }
 
+//assertions
+async expectLoginTitle(){
+    await expect(this.page).toHaveTitle('/Login/');
+}
 
 
     

@@ -4,8 +4,8 @@
     "password":"b"
  },
  "invalidLogin":{
-    "invalidUsername":"",
-    "invalidPassword":""
+    "invalidUsername":"s",
+    "invalidPassword":"ss"
  },
  "emptyCredentials":{
     "emptyUsername":"",
