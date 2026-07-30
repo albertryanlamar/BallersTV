@@ -15,8 +15,8 @@ test(`Login with valid email and password`,async({basePage,homePage,loginPage,lo
 
   // third step
   await fillLoginWithCredentialsStep(loginPage, loginData.validLogin.username, loginData.validLogin.password);
-  await expect(loginPage.unameTxtBox).toHaveValue(loginData.validLogin.username);
-  await expect(loginPage.passwordTxtBox).toHaveValue(loginData.validLogin.password);
+  await expect(loginPage.authForm.emailTxtBox).toHaveValue(loginData.validLogin.username);
+  await expect(loginPage.authForm.passwordTxtBx).toHaveValue(loginData.validLogin.password);
 
   // fourth step
   await clickLoginStep(loginPage);
@@ -46,4 +46,16 @@ test(`Login with empty credential`,async (basePage,homePage,loginPage,loginData)
   //1st step
   await openWebsiteStep(basePage,process.env.BASE_URL);
   await basePage.expectBaseTitle();
+
+  // 2nd step
+  await goToLoginStep(homePage,loginPage);
+  await loginPage.expectLoginTitle();
+
+  //3rd steps
+  await expect(loginData.authForm.emailTxtBox).toHaveValue('');
+  await expect(loginData.authForm.passwordTxtBx).toHaveValue('')
+  
+  //4th step
+  await clickLoginStep(loginPage);
+  //assertions of error message
 })
