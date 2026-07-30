@@ -13,7 +13,7 @@ passwordTxtBx:Locator;
         this.page= page;
         this.cmnAct= new CommonActions();
         this.emailTxtBox= this.page.getByRole('');
-        this.passwordTxtBx=this.page.getByRole();
+        this.passwordTxtBx=this.page.getByRole('');
     }
 
     async fillCredentials(uNmae:string,pass:string){

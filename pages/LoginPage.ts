@@ -44,7 +44,7 @@ async expectLoginTitle(){
 
 async expectCredentialsFilled(emailVal,passVal){
     await expect(this.authForm.emailTxtBox).toHaveValue(emailVal);
-    await expect(this.authForm.passwordTxtBox).toHaveValue(passVal);
+    await expect(this.authForm.passwordTxtBx).toHaveValue(passVal);
 }
 
 
