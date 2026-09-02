@@ -2,7 +2,17 @@
 import process from "node:process";
 import {test, expect} from "../../fixtures/testDataFixtures"
 import {openWebsiteStep,goToLoginStep,fillLoginWithCredentialsStep,clickLoginStep} from "../../helpers/CommonStepsFlow"
+import {logger} from "../..utils/logger";
 
+test.afterEach(async ({},testInfo)=>{
+  if (testInfo.status === 'passed') {
+    logger.pass(`${testInfo.title}`);
+  } 
+  else {
+    const errorMessage = testInfo.error?.message ?? 'Unknown error';
+    logger.fail(`${testInfo.title}`,errorMessage);
+  }
+})
 test(`Login with valid email and password`,async({basePage,homePage,loginPage,loginData})=>{
 
   // first step
