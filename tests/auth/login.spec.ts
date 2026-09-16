@@ -69,3 +69,13 @@ test(`Login with empty credential`,async (basePage,homePage,loginPage,loginData)
   await clickLoginStep(loginPage);
   //assertions of error message
 })
+
+test(`show/hide password`,async({basePage,homePage,loginPage,loginData})=>{
+ await 
+})
+
+test(`Forgot Password`,async({BasePage,hoittmePage,loginPage,loginData})=> {
+  await openWebsiteStep(basePage,process.env.BASE_URL);
+  await
+})
+
