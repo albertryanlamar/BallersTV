@@ -75,7 +75,16 @@ test(`show/hide password`,async({basePage,homePage,loginPage,loginData})=>{
 })
 
 test(`Forgot Password`,async({BasePage,hoittmePage,loginPage,loginData})=> {
+ //step 1
   await openWebsiteStep(basePage,process.env.BASE_URL);
-  await
+  //step 2
+  await goToLoginStep(homePage,loginPage);
+  //step3
+  await test.step(`Click i dont know my password link`,async ()=>{
+     await loginPage.clickForgotPass();
+     await forgotPassPage.waitforloadstate();
+     await expect(forgotPassPage.page).toHaveTitle('');
+  });
+  await test.step
 })
 

@@ -20,4 +20,8 @@ passwordTxtBx:Locator;
         await this.cmnAct.fill(this.emailTxtBox,uNmae);
         await this.cmnAct.fill(this.passwordTxtBx,pass)
     }
+
+    async fillCredForgotPage(uName:string){
+        await this.cmnAct.fill(this.emailTxtBox,uName);
+    }
 }

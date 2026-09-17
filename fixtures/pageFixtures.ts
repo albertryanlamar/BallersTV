@@ -3,6 +3,7 @@ import {LoginPage} from "../pages/LoginPage";
 import {HomePage} from "../pages/HomePage";
 import { BasePage } from "../pages/BasePage";
 import { SignupPage } from "../pages/SignupPage";
+import {ForgotPassPage} from "../pages/ForgotPassPage";
 
 
 
@@ -11,6 +12,7 @@ loginPage:LoginPage;
 homePage: HomePage;
 basePage: BasePage;
 signupPage:SignupPage;
+fogotPassPage:ForgotPassPage;
 }
 
 
@@ -33,5 +35,11 @@ export const testPageObj = baseFixture.extend<PageFixtures>({
   signupPage: async ({ page }, use) => {
     const signupPage = new SignupPage(page);
     await use(signupPage);
+  },
+
+  forgotPassPage: async ()=>{
+    const forgotPassPage = new ForgotPassPage(page);
+    await use(fogotPassPage);
+    
   }
 });

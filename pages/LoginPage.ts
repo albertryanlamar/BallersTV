@@ -22,7 +22,7 @@ constructor(page:Page){
     this.passwordTxtBox=this.page.getByPlaceholder('Your password');
     this.signInButton=this.page.getByRole('button', { name: 'Sign in' });
     this.createAccountLink=this.page.getByRole('link', { name: 'Create an account' });
-    thid.forgetPasswordLink = this.page.getByRole('link', { name: "I don't know my password" })
+    this.forgetPasswordLink = this.page.getByRole('link', { name: "I don't know my password" })
     this.showPasswordBtn = this.page.getByText('Show')
     this.cmnAct= new CommonActions();
 }
@@ -41,6 +41,10 @@ async login(userName:string,password:string){
 
 async showPassword(){
     await this.cmnAct.click(this.showPasswordBtn);
+}
+
+async clickForgotPass(){
+    awit this.cmnAct.click(this.forgetPasswordLink);
 }
 
 //assertions
