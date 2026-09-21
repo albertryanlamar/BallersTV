@@ -8,12 +8,15 @@ cmnAct:CommonActions;
 page:Page;
 emailTxtBox:Locator;
 passwordTxtBx:Locator;
+showPasswordBtn:Locator;
 
     constructor(page:Page){
         this.page= page;
         this.cmnAct= new CommonActions();
-        this.emailTxtBox= this.page.getByRole('');
-        this.passwordTxtBx=this.page.getByRole('');
+        this.emailTxtBox= this.page.getByPlaceholder('you@example.com');
+        this.passwordTxtBx=this.page.getByPlaceholder('Your password');
+        this.showPasswordBtn = this.page.getByText('Show', { exact: true });
+
     }
 
     async fillCredentials(uNmae:string,pass:string){
@@ -23,5 +26,8 @@ passwordTxtBx:Locator;
 
     async fillCredForgotPage(uName:string){
         await this.cmnAct.fill(this.emailTxtBox,uName);
+    }
+    async showPassword() {
+        await this.cmnAct.click(this.showPasswordBtn):
     }
 }

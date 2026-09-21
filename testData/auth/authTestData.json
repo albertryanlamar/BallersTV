@@ -1,18 +1,14 @@
 {
- "validLogin":{
-    "username":"b",
-    "password":"b"
- },
- "invalidLogin":{
-    "invalidUsername":"s",
-    "invalidPassword":"ss"
- },
- "emptyCredentials":{
-    "emptyUsername":"",
-    "emptyPassword":""
- },
- "forgotPass":{
-   "username":""
- }
-
+    "validLogin":{
+        "username":"b",
+        "password":"b"
+    },
+    "invalidLogin":{
+        "invalidUsername":"",
+        "invalidPassword":""
+    },
+    "emptyCredentials":{
+        "emptyUsername":"",
+        "emptyPassword":""
+    }
 }

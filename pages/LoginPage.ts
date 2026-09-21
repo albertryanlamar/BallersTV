@@ -44,7 +44,11 @@ async showPassword(){
 }
 
 async clickForgotPass(){
-    awit this.cmnAct.click(this.forgetPasswordLink);
+    await this.cmnAct.click(this.forgetPasswordLink);
+}
+
+async clickCreateAccountBtn(){
+   await the this.cmnAct.click(this.creatAccountLink);
 }
 
 //assertions
