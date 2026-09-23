@@ -1,0 +1,10 @@
+{
+  "validRegistration":{
+    "email":"",
+    "password":"",
+    "role":"",
+    "haspromo":false,
+    "promocode":""
+  }
+
+}

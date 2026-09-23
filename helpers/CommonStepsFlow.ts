@@ -38,6 +38,11 @@ export async function clickCreateAccountStep(loginPage:LoginPage){
 export async function fillRegisterInfo(signupPage:SignupPage,email,password,role,havePromo:boolean= false,promoValue) {
   await test.step(`fill Info `,async()=>{
    await signupPage.signUp(email,password,role,havePromo,promoValue);
-  })
-    
+  })  
+}
+
+export async function clickCreateBtnStep(){
+    await test.step(``, async ()=>{
+        await signupPage.clickSignup();
+    })
 }

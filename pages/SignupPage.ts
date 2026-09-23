@@ -70,9 +70,20 @@ async signUp(emailName:string,pass:string,roleval:string,havePromo:boolean= fals
     if(havePromo&&promoCodeValue){
         await this.clickPromoCode();
         await this.fillPromo(promoCodeValue);
+    }  
+}
+
+//assertions
+async expectedCredentialsFilled(role:string,emailName:string,password:string,isPassHide:boolean=false,hasPromo:boolean= false,promoCode?:string){
+    await expect(this.roleDrpdwn).toHaveValue(role.lowerCase())
+    await expect(this.authForm.emailTxtBox).toHaveValue(emailName);
+    await expect(this.authForm.passwordTxtBox).toHaveValue(password);
+    if(isPassHide){
+      await expect(this.AuthForm.showPasswordBtn).toHaveAttribute('type','password');
     }
-    await clickSignup();
-    
+    if(hasPromo && promoCode){
+        await expect(this.promoCodeTextbox).toHaveValue(promoCode);
+    }
 }
 
 

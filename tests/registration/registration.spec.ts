@@ -1,6 +1,6 @@
 import {test} from '../../fixtures/testDataFixtures';
 import {logger} from '../../utils/logger'
-import { openWebsiteStep, clickCreateAccountStep} from "../../helpers/CommonStepFlow";
+import { openWebsiteStep, clickCreateAccountStep,goToLoginStep,clickCreateAccountBtn} from "../../helpers/CommonStepFlow";
 
 
 test.afterEach(()=>{
@@ -12,15 +12,17 @@ test.afterEach(()=>{
         logger.fail(`${testInfo.testInfo}`,errorMessage);
     }
 });
-test(`Successful Registration`,async({basePage,homePage,loginPage})=>{
+test(`Successful Registration`,async({basePage,homePage,loginPage,signupPage,registerData})=>{
      //1st step
      await openWebsiteStep();
-  //2nd step
+     //2nd step
      await goToLoginStep();
      //3rd step
      await clickCreateAccountStep():
-     await signupPage.waitfo
+     await signupPage.waitforState();
      // 4th step
-     
-
+     await signupPage.signUp(validRegistration.email,validRegistration.password,validRegistration.role)
+     await signupPage.expectCredentialsFilled(validRegistration.email,validRegistration.password)
+    // 5th step
+    await clickCreateAccountBtn();
 })
